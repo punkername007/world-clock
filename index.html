@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock</title>
   </head>
   <body>
@@ -11,42 +13,41 @@
       <header>
         <h1>World Clock</h1>
       </header>
-      <main> <select name="" id="search-element">
-            <option value="">Select a city --</option>
-            <option value="">New York</option>
-            <option value="">Los Angeles</option>
-            <option value="">San Francisco</option>
-          </select>
-        <div class="city">
-          <div>
-            <h2>New York</h2>
-            <div class="current-date">Month day year</div>
-          </div>
-          <div class="current-time">00:00:00 <small>AM</small></div>
-        </div>
-        <div class="city">
+      <main>
+        <select name="" id="search-element">
+          <option value="">Select a city --</option>
+          <option value="">New York</option>
+          <option value="">Los Angeles</option>
+          <option value="">San Francisco</option>
+        </select>
+
+        <div class="city" id="los-angeles">
           <div>
             <h2>Los Angeles</h2>
-            <div class="current-date">Month day year</div>
+            <div class="current-date"></div>
           </div>
-          <div class="current-time">00:00:00 <small>AM</small></div>
+          <div class="current-time"></div>
         </div>
-        <div class="city">
+        <div class="city" id="paris">
           <div>
-            <h2>San  Francisco</h2>
-            <div class="current-date">Month day year</div>
+            <h2>Paris</h2>
+            <div class="current-date"></div>
           </div>
-          <div class="current-time">00:00:00 <small>AM</small></div>
-        </div></main>
+          <div class="current-time"><small>AM</small></div>
+        </div>
+      </main>
 
-    <footer>
-      This project was coded by
-      <a href="https://github.com/punkername007" target="_blank">Selene Roa</a>
-      and is
-      <a href="https://github.com/punkername007/world-clock" target="_blank"
-        >open sourced on GitHub</a
-      >
-    </footer>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/punkername007" target="_blank"
+          >Selene Roa</a
+        >
+        and is
+        <a href="https://github.com/punkername007/world-clock" target="_blank"
+          >open sourced on GitHub</a
+        >
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
