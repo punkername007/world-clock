@@ -23,18 +23,20 @@ function updateTime() {
 }
 
 function updateCity(event) {
-  let cityTimeZone = event.target.value;
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-  }
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `<div class="city"><div><h2>${cityName}</h2><div class="current-date">${cityTime.format(
-    "MMMM Do YYYY"
-  )}</div></div><div class="current-time">${cityTime.format(
-    "h:mm:ss"
-  )} <small>${cityTime.format("A")}</small></div></div>`;
+  setInterval(function () {
+    let cityTimeZone = event.target.value;
+    if (cityTimeZone === "current") {
+      cityTimeZone = moment.tz.guess();
+    }
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(cityTimeZone);
+    let citiesElement = document.querySelector("#cities");
+    citiesElement.innerHTML = `<div class="city"><div><h2>${cityName}</h2><div class="current-date">${cityTime.format(
+      "MMMM Do YYYY"
+    )}</div></div><div class="current-time">${cityTime.format(
+      "h:mm:ss"
+    )} <small>${cityTime.format("A")}</small></div></div>`;
+  }, 1000);
 }
 
 setInterval(updateTime, 1000);
