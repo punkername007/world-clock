@@ -20,6 +20,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let baCityElement = document.querySelector("#buenos-aires");
+  if (baCityElement) {
+    let baCityDateElement = baCityElement.querySelector(".current-date");
+    let baCityTimeElement = baCityElement.querySelector(".current-time");
+    let baCityTime = moment().tz("America/Argentina/Buenos_Aires");
+    baCityDateElement.innerHTML = baCityTime.format("MMMM Do YYYY");
+    baCityTimeElement.innerHTML = baCityTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -35,7 +46,9 @@ function updateCity(event) {
       "MMMM Do YYYY"
     )}</div></div><div class="current-time">${cityTime.format(
       "h:mm:ss"
-    )} <small>${cityTime.format("A")}</small></div></div>`;
+    )} <small>${cityTime.format(
+      "A"
+    )}</small></div></div> <a href="index.html">All cities</a>`;
   }, 1000);
 }
 
