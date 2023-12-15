@@ -1,20 +1,43 @@
-function updateCities() {
+function updateTime() {
   let lacityElement = document.querySelector("#los-angeles");
-  let lacityDateElement = lacityElement.querySelector(".current-date");
-  let lacityTimeElement = lacityElement.querySelector(".current-time");
-  let lacityTime = moment().tz("America/Los_Angeles");
-  lacityDateElement.innerHTML = lacityTime.format("MMMM Do YYYY");
-  lacityTimeElement.innerHTML = lacityTime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
+  if (lacityElement) {
+    let lacityDateElement = lacityElement.querySelector(".current-date");
+    let lacityTimeElement = lacityElement.querySelector(".current-time");
+    let lacityTime = moment().tz("America/Los_Angeles");
+    lacityDateElement.innerHTML = lacityTime.format("MMMM Do YYYY");
+    lacityTimeElement.innerHTML = lacityTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 
   let parisCityElement = document.querySelector("#paris");
-  let parisCityDateElement = parisCityElement.querySelector(".current-date");
-  let parisCityTimeElement = parisCityElement.querySelector(".current-time");
-  let parisCityTime = moment().tz("Europe/Paris");
-  parisCityDateElement.innerHTML = parisCityTime.format("MMMM Do YYYY");
-  parisCityTimeElement.innerHTML = parisCityTime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
+  if (parisCityElement) {
+    let parisCityDateElement = parisCityElement.querySelector(".current-date");
+    let parisCityTimeElement = parisCityElement.querySelector(".current-time");
+    let parisCityTime = moment().tz("Europe/Paris");
+    parisCityDateElement.innerHTML = parisCityTime.format("MMMM Do YYYY");
+    parisCityTimeElement.innerHTML = parisCityTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
-setInterval(updateCities, 1000);
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div class="city"><div><h2>${cityName}</h2><div class="current-date">${cityTime.format(
+    "MMMM Do YYYY"
+  )}</div></div><div class="current-time">${cityTime.format(
+    "h:mm:ss"
+  )} <small>${cityTime.format("A")}</small></div></div>`;
+}
+
+setInterval(updateTime, 1000);
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
