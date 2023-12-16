@@ -31,6 +31,7 @@ select {
   padding: 10px;
   width: 100%;
 }
+
 .container {
   background: linear-gradient(
     130deg,
@@ -45,7 +46,7 @@ select {
 }
 
 .city {
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  border-bottom: 1px dashed rgba(96, 93, 93, 0.2);
   display: flex;
   justify-content: space-between;
   margin: 10px 0;

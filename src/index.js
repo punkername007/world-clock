@@ -10,13 +10,15 @@ function updateTime() {
     );
   }
 
-  let parisCityElement = document.querySelector("#paris");
-  if (parisCityElement) {
-    let parisCityDateElement = parisCityElement.querySelector(".current-date");
-    let parisCityTimeElement = parisCityElement.querySelector(".current-time");
-    let parisCityTime = moment().tz("Europe/Paris");
-    parisCityDateElement.innerHTML = parisCityTime.format("MMMM Do YYYY");
-    parisCityTimeElement.innerHTML = parisCityTime.format(
+  let athensCityElement = document.querySelector("#athens");
+  if (athensCityElement) {
+    let athensCityDateElement =
+      athensCityElement.querySelector(".current-date");
+    let athensCityTimeElement =
+      athensCityElement.querySelector(".current-time");
+    let athensCityTime = moment().tz("Europe/Athens");
+    athensCityDateElement.innerHTML = athensCityTime.format("MMMM Do YYYY");
+    athensCityTimeElement.innerHTML = athensCityTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
