@@ -54,7 +54,27 @@ function updateCity(event) {
   }, 1000);
 }
 
+function changeThemeColor(event){
+  let body = document.querySelector("body");
+  let changeThemeIcon = document.querySelector("#change-theme-icon");
+  
+  body.classList.toggle("dark-mode");
+  if (body.classList.contains("dark-mode")){
+    changeThemeIcon.innerHTML = `<span class="material-symbols-outlined icon" id="change-theme-icon">
+    light_mode
+    </span>`
+  } else {
+    changeThemeIcon.innerHTML = `<span class="material-symbols-outlined icon" id="change-theme-icon">
+    dark_mode
+    </span>`;
+  }
+}
+
 setInterval(updateTime, 1000);
+
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
+
+let changeTheme = document.querySelector("#change-theme-icon");
+changeTheme.addEventListener("click", changeThemeColor);
