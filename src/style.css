@@ -1,13 +1,14 @@
 body {
-  background: #FFFFEC;
-  font-family: sans-serif;
+  background: #f6f6ec;
+  font-family: 'Roboto', sans-serif;
   color: #C6A969;
+  transition: all 200ms ease-in-out;
 }
 
 h1 {
   color: #C6A969;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 400;
   margin-top: 0;
   text-align: center;
 }
@@ -15,12 +16,13 @@ h1 {
 h2 {
   margin: 0 0 5px;
   font-size: 28px;
+  font-weight: 600;
 }
 
 a {
-  color: #597E52;
+  color: #C6A969;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 select {
@@ -41,12 +43,11 @@ select {
 .icon{
   font-size: 36px !important;
   transition: all 200ms ease-in-out;
-
 }
 
 .icon:hover{
   cursor: pointer;
-  color: #597E52;
+  color: #2b1e06b6;
 }
 
 .container {
@@ -56,6 +57,7 @@ select {
   margin: 60px auto 30px;
   max-width: 600px;
   padding: 30px;
+  transition: all 200ms ease-in-out;
 }
 
 .city {
@@ -75,7 +77,7 @@ select {
 }
 .current-time {
   font-size: 48px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .current-time small {
@@ -92,17 +94,30 @@ footer {
 }
 
 .dark-mode{
-  color: #FFFFEC;
+  color: #d9ca9faf;
+  background: #1e1701c5
 }
 
+.dark-mode .icon:hover{
+  color:#F1E4C3
+}
 .dark-mode h1{
-  color: #FFFFEC;
+  color: #F1E4C3;
 }
 .dark-mode .container{
-  background: #C6A969;
+  background: #2b1e06b6;
+  box-shadow: 0px 7px 29px 0px rgba(229, 214, 190, 0.2);
+}
 
+.dark-mode a{
+  color: #F1E4C3;
 }
 .dark-mode select{
-  background: #F1E4C3;
-  color: #C6A969;
+  background: #e4d5aeaf;
+  color: #2d2304ca;
+}
+
+
+.dark-mode footer a{
+  color: #F1E4C3
 }

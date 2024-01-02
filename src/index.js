@@ -50,12 +50,11 @@ function updateCity(event) {
       "h:mm:ss"
     )} <small>${cityTime.format(
       "A"
-    )}</small></div></div> <a href="index.html">All cities</a>`;
+    )}</small></div></div> <a href="/index.html">All cities</a>`;
   }, 1000);
 }
 
 function changeThemeColor(event){
-  event.preventDefault(event)
   let body = document.querySelector("body");
   let changeThemeIcon = document.querySelector("#change-theme-icon");
   
