@@ -55,6 +55,7 @@ function updateCity(event) {
 }
 
 function changeThemeColor(event){
+  event.preventDefault(event)
   let body = document.querySelector("body");
   let changeThemeIcon = document.querySelector("#change-theme-icon");
   

@@ -93,7 +93,6 @@ footer {
 
 .dark-mode{
   color: #FFFFEC;
-  background: #F1E4C3;
 }
 
 .dark-mode h1{
@@ -104,6 +103,6 @@ footer {
 
 }
 .dark-mode select{
-  background: #FFFFEC;
+  background: #F1E4C3;
   color: #C6A969;
 }
